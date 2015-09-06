@@ -1,0 +1,14 @@
+packages/
+obj/
+Domain/DGCLib_Base/bin
+Domain/DGCLib_Base/obj
+Domain/DGCLib_IK/bin
+Domain/DGCLib_IK/obj
+Domain/DGCLib_Misc/bin
+Domain/DGCLib_Misc/obj
+Presenter/DGCLib_Presenter/bin
+Presenter/DGCLib_Presenter/obj
+Views/DGCLib_Universal/bin
+Views/DGCLib_Universal/obj
+Views/DGCLib_WinForms/bin
+Views/DGCLib_WinForms/obj
