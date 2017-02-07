@@ -36,9 +36,12 @@
             this._comboAlgTypes = new System.Windows.Forms.ComboBox();
             this._animateCheckbox = new System.Windows.Forms.CheckBox();
             this._forceRecalc = new System.Windows.Forms.Button();
+            this._saveScreen = new System.Windows.Forms.Button();
             this._groupAlg = new System.Windows.Forms.GroupBox();
+            this._flowAlg = new DGCLib_WinForms.Controls.ExtendedOneColumnFlow();
             this._consoleTextbox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this._canvas = new DGCLib_WinForms.Controls.PictureBoxExtended();
             this._toolStrip = new System.Windows.Forms.ToolStrip();
             this._fpsLabel = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -48,18 +51,16 @@
             this._buttonClear = new System.Windows.Forms.ToolStripMenuItem();
             this._buttonGenerate = new System.Windows.Forms.ToolStripMenuItem();
             this._buttonSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this._saveScreen = new System.Windows.Forms.Button();
             this._saveFileDialogPng = new System.Windows.Forms.SaveFileDialog();
-            this._flowAlg = new DGCLib_WinForms.Controls.ExtendedOneColumnFlow();
-            this._canvas = new DGCLib_WinForms.Controls.PictureBoxExtended();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this._mainTable.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this._flowSettings.SuspendLayout();
             this._groupAlg.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._canvas)).BeginInit();
             this._toolStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._canvas)).BeginInit();
             this.SuspendLayout();
             // 
             // _workerPainter
@@ -156,6 +157,16 @@
             this._forceRecalc.Text = "Force recalculation";
             this._forceRecalc.UseVisualStyleBackColor = true;
             // 
+            // _saveScreen
+            // 
+            this._saveScreen.Location = new System.Drawing.Point(0, 123);
+            this._saveScreen.Margin = new System.Windows.Forms.Padding(0);
+            this._saveScreen.Name = "_saveScreen";
+            this._saveScreen.Size = new System.Drawing.Size(163, 30);
+            this._saveScreen.TabIndex = 9;
+            this._saveScreen.Text = "Save screenshoot";
+            this._saveScreen.UseVisualStyleBackColor = true;
+            // 
             // _groupAlg
             // 
             this._groupAlg.Controls.Add(this._flowAlg);
@@ -166,6 +177,14 @@
             this._groupAlg.TabIndex = 3;
             this._groupAlg.TabStop = false;
             this._groupAlg.Text = "Algorithms";
+            // 
+            // _flowAlg
+            // 
+            this._flowAlg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._flowAlg.Location = new System.Drawing.Point(3, 16);
+            this._flowAlg.Name = "_flowAlg";
+            this._flowAlg.Size = new System.Drawing.Size(220, 425);
+            this._flowAlg.TabIndex = 0;
             // 
             // _consoleTextbox
             // 
@@ -193,10 +212,22 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(619, 609);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
+            // _canvas
+            // 
+            this._canvas.BackgroundColor = System.Drawing.Color.White;
+            this._canvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._canvas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._canvas.Location = new System.Drawing.Point(3, 3);
+            this._canvas.Name = "_canvas";
+            this._canvas.Size = new System.Drawing.Size(613, 578);
+            this._canvas.TabIndex = 2;
+            this._canvas.TabStop = false;
+            // 
             // _toolStrip
             // 
             this._toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._fpsLabel});
+            this._fpsLabel,
+            this.toolStripLabel1});
             this._toolStrip.Location = new System.Drawing.Point(0, 584);
             this._toolStrip.Name = "_toolStrip";
             this._toolStrip.Size = new System.Drawing.Size(619, 25);
@@ -263,38 +294,16 @@
             this._buttonSettings.Size = new System.Drawing.Size(61, 20);
             this._buttonSettings.Text = "Settings";
             // 
-            // _saveScreen
-            // 
-            this._saveScreen.Location = new System.Drawing.Point(0, 123);
-            this._saveScreen.Margin = new System.Windows.Forms.Padding(0);
-            this._saveScreen.Name = "_saveScreen";
-            this._saveScreen.Size = new System.Drawing.Size(163, 30);
-            this._saveScreen.TabIndex = 9;
-            this._saveScreen.Text = "Save screenshoot";
-            this._saveScreen.UseVisualStyleBackColor = true;
-            // 
             // _saveFileDialogPng
             // 
             this._saveFileDialogPng.Filter = "Png image|*.png";
             // 
-            // _flowAlg
+            // toolStripLabel1
             // 
-            this._flowAlg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._flowAlg.Location = new System.Drawing.Point(3, 16);
-            this._flowAlg.Name = "_flowAlg";
-            this._flowAlg.Size = new System.Drawing.Size(220, 425);
-            this._flowAlg.TabIndex = 0;
-            // 
-            // _canvas
-            // 
-            this._canvas.BackgroundColor = System.Drawing.Color.White;
-            this._canvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._canvas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._canvas.Location = new System.Drawing.Point(3, 3);
-            this._canvas.Name = "_canvas";
-            this._canvas.Size = new System.Drawing.Size(613, 578);
-            this._canvas.TabIndex = 2;
-            this._canvas.TabStop = false;
+            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(337, 22);
+            this.toolStripLabel1.Text = "Use Shift+Click to add points. Use Ctrl+Click to remove points.";
             // 
             // MainForm
             // 
@@ -316,11 +325,11 @@
             this._groupAlg.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._canvas)).EndInit();
             this._toolStrip.ResumeLayout(false);
             this._toolStrip.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._canvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,6 +361,7 @@
         private System.Windows.Forms.ToolStripLabel _fpsLabel;
         private System.Windows.Forms.Button _saveScreen;
         private System.Windows.Forms.SaveFileDialog _saveFileDialogPng;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }
 
